@@ -1,0 +1,19 @@
+{
+  "questions" : [
+    {
+      "question" : "What year is it?",
+      "options" : ["2015", "2016", "2019"],
+      "answer": 3
+    }
+    ,{
+      "question" : "What is 2+4?",
+      "options" : ["6", "1", "100"],
+      "answer": 1
+    }
+    ,{
+      "question" : "Who is the enemy?",
+      "options" : ["Chicken", "Bat", "Slime"],
+      "answer": 3
+    }
+  ]
+}

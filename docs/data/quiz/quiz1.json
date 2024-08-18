@@ -1,0 +1,19 @@
+{
+  "questions" : [
+    {
+      "question" : "Where is Kyoto?",
+      "options" : ["日本", "America", "Canada"],
+      "answer": 1
+    }
+    ,{
+      "question" : "What is 2+2?",
+      "options" : ["12", "4", "100"],
+      "answer": 2
+    }
+    ,{
+      "question" : "Who is the enemy?",
+      "options" : ["Chicken", "Bat", "Slime"],
+      "answer": 3
+    }
+  ]
+}
