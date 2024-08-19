@@ -1673,7 +1673,7 @@ Graphics._testCanvasBlendModes = function() {
     canvas = document.createElement('canvas');
     canvas.width = 1;
     canvas.height = 1;
-    context = canvas.getContext('2d');
+    context = canvas.getContext('2d', { willReadFrequently: true });
     context.globalCompositeOperation = 'source-over';
     context.fillStyle = 'white';
     context.fillRect(0, 0, 1, 1);
@@ -6537,10 +6537,20 @@ WebAudio.initialize = function(noAudio) {
             this._detectCodecs();
             this._createMasterGainNode();
             this._setupEventHandlers();
+            
+            // ユーザーのジェスチャーを待つ
+            document.addEventListener('touchstart', this._resumeContext.bind(this), { once: true });
+            document.addEventListener('mousedown', this._resumeContext.bind(this), { once: true });
         }
         this._initialized = true;
     }
     return !!this._context;
+};
+
+WebAudio._resumeContext = function() {
+    if (this._context && this._context.state === 'suspended') {
+        this._context.resume();
+    }
 };
 
 /**
